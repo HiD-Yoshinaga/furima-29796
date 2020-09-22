@@ -64,14 +64,14 @@ RSpec.describe User, type: :model do
       @user.password = '123456'
       @user.encrypted_password = '123456'
       @user.valid?
-      expect(@user.errors.full_messages).to include('Encrypted password パスワードには英字と数字の両方を含めて設定してください')
+      expect(@user.errors.full_messages).to include('Password パスワードには英字と数字の両方を含めて設定してください')
     end
 
     it 'passwordは半角英字のみでは登録できないこと' do
       @user.password = 'password'
       @user.encrypted_password = 'password'
       @user.valid?
-      expect(@user.errors.full_messages).to include('Encrypted password パスワードには英字と数字の両方を含めて設定してください')
+      expect(@user.errors.full_messages).to include('Password パスワードには英字と数字の両方を含めて設定してください')
     end
 
     it 'first_nameが空では登録できないこと' do

@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: 'メールアドレスは@を含めて入力してください' }
-  validates :encrypted_password, presence: true, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i, message: 'パスワードには英字と数字の両方を含めて設定してください' }
+  validates :password, presence: true, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i, message: 'パスワードには英字と数字の両方を含めて設定してください' }
   validates :birthday, presence: true
 
   with_options presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, message: '全角文字を使用してください' } do
