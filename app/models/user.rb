@@ -8,10 +8,10 @@ class User < ApplicationRecord
   has_many :orders
 
   validates :nickname, presence: true
-  validates :email, presence: true, uniqueness: true, format: { with: /@.+/, message: 'メールアドレスは＠を含めて入力してください' }
-  validates :encrypted_password, presence: true, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,100}+\z/i, message: 'パスワードは6文字以上の半角英数字で設定してください' } 
-  # PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-  # validates_format_of :password, with: PASSWORD_REGEX, message: 'パスワードには英字と数字の両方を含めて設定してください'
+  # validates :email, presence: true, uniqueness: true, format: { with: /@.+/, message: 'メールアドレスは＠を含めて入力してください' }
+  # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: 'メールアドレスは@を含めて入力してください' }
+  validates :encrypted_password, presence: true, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i, message: 'パスワードには英字と数字の両方を含めて設定してください' }
   validates :birthday, presence: true
 
   with_options presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, message: '全角文字を使用してください' } do
@@ -23,5 +23,4 @@ class User < ApplicationRecord
     validates :first_name_kana
     validates :family_name_kana
   end
-
 end
