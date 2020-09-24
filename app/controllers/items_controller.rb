@@ -1,16 +1,21 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
+  def index
+    @items = Item.all
+  end
+  
   def new
-    @items = Item.new
+    @item = Item.new
   end
 
   def create
-    Item.create(item_params)
-  end
-
-  def index
-    @items = Item.all
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -22,9 +27,9 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:item_name, :item_info, :item_price, :item_categories_id, :item_condition_id, :shipping_fee_id, :ship_from_id, :day_to_ship_id).merge(user_id: current_user.id)
+    params.require(:item).permit(:item_name, :item_info, :item_price, :item_categories_id, :item_condition_id, :shipping_fee_id, :ship_from_id, :day_to_ship_id, :image ).merge(user_id: current_user.id)
   end
-  
+
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
