@@ -16,13 +16,13 @@ class Item < ApplicationRecord
     validates :item_info
   end
 
-  validates :item_price, presence: true, 
-            :numericality => {
-              :greater_than_or_equal_to => 300,
-              :less_than_or_equal_to => 9999999,
-              :message => '金額が¥300~9,999,999の範囲外です' 
-            }, 
-            format: { with: /\A[0-9]+\z/, message: '販売価格は半角数字で入力してください' }
+  validates :item_price, presence: true,
+                         numericality: {
+                           greater_than_or_equal_to: 300,
+                           less_than_or_equal_to: 9_999_999,
+                           message: '金額が¥300~9,999,999の範囲外です'
+                         },
+                         format: { with: /\A[0-9]+\z/, message: '販売価格は半角数字で入力してください' }
 
   with_options presence: true, numericality: { other_than: 1 } do
     validates :item_categories_id
