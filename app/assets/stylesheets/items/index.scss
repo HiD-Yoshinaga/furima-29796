@@ -245,29 +245,32 @@ a {
 }
 
 .item-lists>.list {
-  width: 37vh;
+  width: 100vw;
   padding: 1vw;
   background-color: #FFF;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-
-.item-img-content {
-  position: relative;
-}
+/* 購入機能実装後修正 */
+// .item-img-content {
+//   position: relative;
+// } 
 
 .item-img {
-  width: 33vh;
   height: 33vh;
 }
 
-.sold-out {
-  position: absolute;
-  top: 40%;
-  width: 100%;
-  text-align: center;
-  background-color: crimson;
-  transform: skewY(-10deg);
-}
+/* 購入機能実装後修正 */
+// .sold-out {
+//   position: absolute;
+//   top: 40%;
+//   width: 100%;
+//   text-align: center;
+//   background-color: crimson;
+//   transform: skewY(-10deg);
+// }
 
 .sold-out>span {
   color: #FFF;
