@@ -22,6 +22,12 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+    @item_category = ItemCategory.find_by(id: @item.item_categories_id)
+    @item_condition = ItemCondition.find_by(id: @item.item_condition_id)
+    @shipping_fee = ShippingFee.find_by(id: @item.shipping_fee_id)
+    @ship_from = ShipFrom.find_by(id: @item.ship_from_id)
+    @day_to_ship = DayToShip.find_by(id: @item.day_to_ship_id)
   end
 
   private
