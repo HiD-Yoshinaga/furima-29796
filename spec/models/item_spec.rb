@@ -6,7 +6,7 @@ RSpec.describe Item, type: :model do
       @item = FactoryBot.build(:item)
     end
 
-    it 'Imageとitem_nameとitem_infoとitem_priceとitem_categories_idとitem_condition_idとshipping_fee_idとship_from_idとday_to_ship_idが存在すれば登録できること' do
+    it 'Imageとitem_nameとitem_infoとitem_priceとitem_category_idとitem_condition_idとshipping_fee_idとship_from_idとday_to_ship_idが存在すれば登録できること' do
       expect(@item).to be_valid
     end
 
@@ -34,8 +34,8 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Item price can't be blank")
     end
 
-    it 'item_categories_idが1では登録できないこと' do
-      @item.item_categories_id = '1'
+    it 'item_category_idが1では登録できないこと' do
+      @item.item_category_id = '1'
       @item.valid?
       expect(@item.errors.full_messages).to include('Item categories must be other than 1')
     end
