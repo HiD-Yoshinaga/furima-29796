@@ -28,7 +28,7 @@
 | item_info          | text       | null: false                     |
 | item_price         | integer    | null: false                     |
 | user               | references | null: false, foreign_key: true  |
-| item_categories_id | integer    | null: false                     |
+| item_category_id   | integer    | null: false                     |
 | item_condition_id  | integer    | null: false                     |
 | shipping_fee_id    | integer    | null: false                     |
 | ship_from_id       | integer    | null: false                     |
@@ -52,16 +52,16 @@
 - belongs_to :item
 - belongs_to :user
 
-## orders_info テーブル
+## order_infos テーブル
 
-|    Column     |    Type    |            Options             |
-| ------------- | ---------- | ------------------------------ |
-| order         | references | null: false, foreign_key: true |
-| postcode      | string     | null: false                    |
-| ship_from     | integer    | null: false                    |
-| city          | string     | null: false                    |
-| house_number  | string     | null: false                    |
-| building_name | string     |                                |
-| phone_number  | string     | null: false, unipue: true      |
+|       Column        |    Type    |            Options             |
+| ------------------- | ---------- | ------------------------------ |
+| order               | references | null: false, foreign_key: true |
+| postcode            | string     | null: false                    |
+| shipping_address_id | integer    | null: false                    |
+| city                | string     | null: false                    |
+| house_number        | string     | null: false                    |
+| building_name       | string     |                                |
+| phone_number        | string     | null: false, unipue: true      |
 
 - belongs_to :order
