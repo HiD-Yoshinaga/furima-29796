@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     # binding.pry
     if @message.save
-      ActionCable.server.broadcast 'message_channel', {content: @message, nickname: current_user.nickname}
+      ActionCable.server.broadcast 'message_channel', {content: @message, nickname: current_user.nickname, time: @message.created_at.strftime("%Y/%m/%d %H:%M:%S")}
     end
   end
 

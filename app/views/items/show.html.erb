@@ -101,16 +101,29 @@
   <% else %>
     <p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p>
   <% end %>
+    <p class='message-tittle'>
+      コメント一覧 
+    </p>
+    <div id='messages' class='messages'>
+    <% @messages.reverse_each do |message| %>
+      <div class='upper-message'>
+        <div id='message-user' class="message-user">
+          <%= message.user.nickname %>
+        </div>
+        <div id="message-date" class="message-date">
+          <%= "#{l message.created_at}" %>
+        </div>
+      </div>
+      <div class="lower-message">
+        <div id='text' class=message-text>
+          <%= message.text %>
+        </div>
+      </div>
+    <% end %>
+    </div>
   </div>
   <% end %>
-  <div id='messages'>
-    <% @messages.reverse_each do |message| %>
-      <p>
-        <%= link_to message.user.nickname, "hoge" %>
-        <%= message.text %>
-      </p>
-    <% end %>
-  </div>
+
   <div class="links">
     <a href="#" class="change-item-btn">
       ＜ 前の商品

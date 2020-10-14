@@ -10,7 +10,20 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
-    const html = `<p>${data.nickname} ${data.content.text}</p>`;
+    const html = `
+      <div class='upper-message'>
+        <div id='message-user'>
+          ${data.nickname} 
+        </div>
+        <div id="message-date" class="message-date">
+          ${data.time}
+        </div>
+      </div>
+      <div class="lower-message">
+        <div id='text' class=message-text>
+          ${data.content.text}
+        </div>
+      </div>`;
     const messages = document.getElementById('messages');
     const newMessage = document.getElementById('message_text');
     messages.insertAdjacentHTML('afterbegin', html);
