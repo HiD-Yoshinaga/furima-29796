@@ -1,6 +1,5 @@
 class Item < ApplicationRecord
   belongs_to :user
-  has_many :messages
   has_one :order
   has_many_attached :images
   

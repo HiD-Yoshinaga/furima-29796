@@ -83,11 +83,10 @@
     </div>
   </div>
   <%# /商品の概要 %>
-  <% if @item.order.nil? %>
+
   <div class="comment-box">
-  <% if current_user %>
-    <%= form_with model: [@item,@message],url:item_messages_path(@item.id), local: true do |f| %>
-      <%= f.text_area :text, class:"comment-text" %>
+    <form>
+      <textarea class="comment-text"></textarea>
       <p class="comment-warn">
         相手のことを考え丁寧なコメントを心がけましょう。
         <br>
@@ -97,35 +96,8 @@
         <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
         <span>コメントする<span>
       </button>
-    <% end %>
-  <% else %>
-    <p class ="warn">※ コメントの投稿にはログイン/新規登録が必要です ※</p><br>
-    <div class ="warn-login"><%= link_to 'ログインはこちら', new_user_session_path %></div><br>
-    <div class ="warn-sign-up"><%= link_to '新規登録はこちら', new_user_registration_path %></div>
-  <% end %>
-    <p class='message-tittle'>
-      コメント一覧 
-    </p>
-    <div id='messages' class='messages'>
-    <% @messages.reverse_each do |message| %>
-      <div class='upper-message'>
-        <div id='message-user' class="message-user">
-          <%= message.user.nickname %>
-        </div>
-        <div id="message-date" class="message-date">
-          <%= "#{l message.created_at}" %>
-        </div>
-      </div>
-      <div class="lower-message">
-        <div id='text' class=message-text>
-          <%= message.text %>
-        </div>
-      </div>
-    <% end %>
-    </div>
+    </form>
   </div>
-  <% end %>
-
   <div class="links">
     <a href="#" class="change-item-btn">
       ＜ 前の商品
