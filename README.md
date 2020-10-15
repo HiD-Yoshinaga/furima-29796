@@ -4,7 +4,7 @@
 
 ##  usersテーブル
 
-|      Column      |    Type    |             Options             |
+|      Column        |    Type    |             Options             |
 | ------------------ | ---------- | ------------------------------- |
 | nickname           | string     | null: false                     |
 | email              | string     | null: false, unipue: true       |
@@ -64,4 +64,19 @@
 | building_name       | string     |                                |
 | phone_number        | string     | null: false, unipue: true      |
 
+### Association
+
 - belongs_to :order
+
+## messages テーブル
+
+|       Column        |    Type    |            Options             |
+| ------------------- | ---------- | ------------------------------ |
+| text                | text       | null: false                    |
+| user                | references | null: false, foreign_key: true |
+| item                | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :item
+- belongs_to :user
