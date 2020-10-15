@@ -12,7 +12,7 @@ consumer.subscriptions.create("MessageChannel", {
   received(data) {
     const html = `
       <div class='upper-message'>
-        <div id='message-user'>
+        <div id='message-user' class="message-user">
           ${data.nickname} 
         </div>
         <div id="message-date" class="message-date">

@@ -99,7 +99,9 @@
       </button>
     <% end %>
   <% else %>
-    <p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p>
+    <p class ="warn">※ コメントの投稿にはログイン/新規登録が必要です ※</p><br>
+    <div class ="warn-login"><%= link_to 'ログインはこちら', new_user_session_path %></div><br>
+    <div class ="warn-sign-up"><%= link_to '新規登録はこちら', new_user_registration_path %></div>
   <% end %>
     <p class='message-tittle'>
       コメント一覧 
