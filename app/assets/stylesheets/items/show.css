@@ -200,15 +200,14 @@
 
 .message-tittle {
   text-align: center;
-  margin: 30px 0 0 0;
+  margin: 30px 0 10px 0;
 }
 
 .messages {
   background-color: #fff;
   border: 2px solid #3CCACE;
   width: 45vw;
-  height: calc(100vh - 100px - 90px);
-  margin: 5vh 0;
+  height: 30vh;
   overflow: scroll;
 }
 
