@@ -16,14 +16,14 @@ http://54.168.218.39/
   <dd>Pass: password</dd>
   <dt>テスト用アカウント等</dt>
   <dd>購入者用
-      メールアドレス: buy@buy.com
-      パスワード: passw0rd
-      購入用カード情報
-      番号：4242424242424242
-      期限：Thu Dec 24 2020 00:00:00 GMT+0900 (日本標準時)
+      メールアドレス: buy@buy.com<br>
+      パスワード: passw0rd<br>
+      購入用カード情報<br>
+      番号：4242424242424242<br>
+      期限：Thu Dec 24 2020 00:00:00 GMT+0900 (日本標準時)<br>
       セキュリティコード：123</dd>
   <dt>出品者用</dt>
-  <dd>メールアドレス名: sell@sell.com
+  <dd>メールアドレス名: sell@sell.com<br>
       パスワード: passw0rd</dd>
 </dl>
 
@@ -38,7 +38,7 @@ https://github.com/HiD-Yoshinaga/furima-29796
   <dd>HTML/CSS/Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code</dd>
   <dt>開発期間と平均作業時間</dt>
   <dd>開発期間：9/16~10/9（24日間）</dd>
-  <dd>1日あたりの平均作業時間：6</dd>
+  <dd>1日あたりの平均作業時間：6h</dd>
   <dd>合計：144時間</dd>
 </dl>
 
