@@ -12,8 +12,8 @@ http://54.168.218.39/
 </a>
 <dl>
   <dt>ID/Pass</dt>
-  <dd>ID: admin</dd>
-  <dd>Pass: password</dd>
+  <dd>ID: admin<br>
+      Pass: password</dd>
   <dt>テスト用アカウント等</dt>
   <dd>購入者用
       メールアドレス: buy@buy.com<br>
@@ -37,9 +37,9 @@ https://github.com/HiD-Yoshinaga/furima-29796
   <dt>開発環境</dt>
   <dd>HTML/CSS/Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code</dd>
   <dt>開発期間と平均作業時間</dt>
-  <dd>開発期間：9/16~10/9（24日間）</dd>
-  <dd>1日あたりの平均作業時間：6h</dd>
-  <dd>合計：144時間</dd>
+  <dd>開発期間：9/16~10/9（24日間）<br>
+      1日あたりの平均作業時間：6h<br>
+      合計：144時間</dd>
 </dl>
 
 ## 動作確認方法
@@ -51,7 +51,8 @@ WebブラウザGoogle Chromeの最新版を利用してアクセスしてくだ�
 
 ## オリジナル追加実装
 テックキャンプで定められた要件以外に、以下の点についてアプリケーションの改善を行いました。
-アプリケーションの課題と解決策
+
+### アプリケーションの課題と解決策
 以下のシートをご覧ください。アプリケーションのペルソナが持つ課題を洗い出し、そして解決策となる追加実装の仕様を洗い出しました。
 
 <a href="url">https://docs.google.com/spreadsheets/d/1QNI59PrJGMf8q8cR2pgKznqVAICBk3AuAGMgqww4MhY/edit#gid=1006772752
